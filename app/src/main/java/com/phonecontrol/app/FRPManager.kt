@@ -111,8 +111,8 @@ use_compression = true
 #!/bin/bash
 # 手机控制客户端启动脚本
 
-SERVER_URL="$serverUrl"
-DEVICE_NAME="$deviceName"
+SERVER_URL_VALUE="$serverUrl"
+DEVICE_NAME_VALUE="$deviceName"
 
 cd ~
 
@@ -124,7 +124,7 @@ sleep 2
 
 # 启动 Python 客户端
 cd ~/phone_control
-nohup python3 main.py --server \$SERVER_URL --name \$DEVICE_NAME > ~/client.log 2>&1 &
+nohup python3 main.py --server ${'$'}SERVER_URL_VALUE --name ${'$'}DEVICE_NAME_VALUE > ~/client.log 2>&1 &
 
 echo "客户端已启动"
 echo "日志: ~/client.log"
